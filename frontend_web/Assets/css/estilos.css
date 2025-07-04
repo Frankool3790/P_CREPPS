@@ -1,0 +1,80 @@
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff8f0;
+  color: #4a3c2f;
+}
+
+.navbar {
+  background-color: #4a3c2f;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #f5e7d6;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-image: url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero .btn {
+  margin-top: 2rem;
+  background-color: #4a3c2f;
+  color: #f5e7d6;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.about {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background-color: #4a3c2f;
+  color: #f5e7d6;
+  text-align: center;
+  padding: 1rem;
+}
