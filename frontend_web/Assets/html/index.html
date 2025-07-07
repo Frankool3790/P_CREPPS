@@ -1,39 +1,121 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crepes & Waffles Estilo</title>
-  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="../css/estilos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">CREPES & WAFFLES</div>
+    <div class="logo">
+      <img src="../img/logo1.jfif" height="50"/>
+    </div>
     <nav>
       <ul class="nav-links">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Menú</a></li>
-        <li><a href="#">Restaurantes</a></li>
-        <li><a href="#">Nosotros</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="restaurantes.html">Restaurantes</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
+    <section class="carousel-container">
+      <div class="carousel" id="carousel">
+        <img src="../img/plato1.jfif">
+        <img src="../img/plato2.jfif">
+        <img src="../img/plato3.jfif">
+        <img src="../img/plato4.jpg">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="prevSlide()">‹</button>
+        <button onclick="nextSlide()">›</button>
+      </div>
+    </section>
     <h1>Bienvenido a un lugar especial</h1>
     <p>Donde los sabores cuentan historias.</p>
-    <a href="#" class="btn">Ver menú</a>
+    <a href="menu.html" class="btn">Ver menú</a>
   </section>
 
-  <section class="about">
-    <h2>Nuestra esencia</h2>
-    <p>En Crepes & Waffles creemos en el arte de cocinar con amor. Cada plato es una experiencia única inspirada en la tradición y la creatividad.</p>
+  <section class="admin">
+    <h2>Administrador</h2>
+    <p>El Administrador tiene control total sobre el sistema, actuando como el superusuario. Sus responsabilidades abarcan la gestión completa de todas las áreas.</p>
+    
+    <ul class="funciones">
+      <li>
+        <strong>Usuarios:</strong> Crear y administrar cuentas del sistema.
+        <div class="acciones">
+          <a href="usuarios.html" class="btn">Ir a Usuarios</a>
+        </div>
+      </li>
+      <li>
+        <strong>Menú y Platos:</strong> Manejo de productos ofrecidos.
+        <div class="acciones">
+          <a href="menu.html" class="btn">Ir al Menú</a>
+        </div>
+      </li>
+      <li>
+        <strong>Inventario:</strong> Gestión de insumos y stock.
+        <div class="acciones">
+          <a href="inventario.html" class="btn">Ir a Inventario</a>
+        </div>
+      </li>
+      <li>
+        <strong>Reservas y Mesas:</strong> Control de reservas y disponibilidad.
+        <div class="acciones">
+          <a href="reservas.html" class="btn">Ir a Reservas</a>
+          <a href="mesas.html" class="btn">Ir a Mesas</a>
+        </div>
+      </li>
+      <li>
+        <strong>Órdenes activas:</strong> Control de pedidos en curso.
+        <div class="acciones">
+          <a href="ordenes.html" class="btn">Ir a Órdenes</a>
+        </div>
+      </li>
+      <li>
+        <strong>Reportes:</strong> Estadísticas y análisis del sistema.
+        <div class="acciones">
+          <a href="reportes.html" class="btn">Ver Reportes</a>
+        </div>
+      </li>
+      <li>
+        <strong>Configuración:</strong> Ajustes técnicos generales.
+        <div class="acciones">
+          <a href="configuracion.html" class="btn">Configuración</a>
+        </div>
+      </li>
+    </ul>
   </section>
-
-  <footer class="footer">
-    <p>&copy; 2025 Crepes & Waffles - Sitio inspirado para fines educativos.</p>
+    <footer class="footer">
+    <p>&copy; 2025 Crepes & Waffles - Sitio utilizado para aprendizaje</p>
   </footer>
+  <script>
+  const carousel = document.getElementById('carousel');
+  let index = 0;
+
+  function showSlide(i) {
+    const totalSlides = carousel.children.length;
+    index = (i + totalSlides) % totalSlides;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(index + 1);
+  }
+
+  function prevSlide() {
+    showSlide(index - 1);
+  }
+
+  // Auto avance cada 5 segundos
+  setInterval(() => {
+    nextSlide();
+  }, 5000);
+</script>
+
 </body>
 </html>
