@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CreppeFlow</title>
+  <link rel="stylesheet" href="../css/styleadmin.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="../Img/logo-remove.png" alt="Logo CreppeFlow">
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="../Usuario_Admin/1_Administrador.html">Inicio</a></li>
+          <li><a href="4_reservas.html">Reservaciones</a></li>
+          <li><a href="9_cronograma.html">Cronograma</a></li>
+          <li><a href="10_materiales.html">Inventario</a></li>
+          <li><a href="3_reportes.html">Reportes</a></li>
+          <li><a href="../html/1_index.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <section class="cantidades-section">
+        <h1 class="cantidades-title">Cantidades de Materiales</h1>
+        <table class="cantidades-table">
+          <thead>
+            <tr>
+              <th class="cantidades-th">Material</th>
+              <th class="cantidades-th">Cantidad Disponible</th>
+              <th class="cantidades-th">Unidad</th>
+            </tr>
+          </thead>
+        <tbody>
+            <tr data-mat="harina"><td class="cantidades-td">Harina</td><td class="cantidades-td">25</td><td class="cantidades-td">kg</td></tr>
+            <tr data-mat="azucar"><td class="cantidades-td">Azúcar</td><td class="cantidades-td">10</td><td class="cantidades-td">kg</td></tr>                
+            <tr data-mat="sal"><td class="cantidades-td">Sal</td><td class="cantidades-td">5</td><td class="cantidades-td">kg</td></tr>
+            <tr data-mat="huevos"><td class="cantidades-td">Huevos</td><td class="cantidades-td">120</td><td class="cantidades-td">unidades</td></tr>
+            <tr data-mat="leche"><td class="cantidades-td">Leche</td><td class="cantidades-td">30</td><td class="cantidades-td">litros</td></tr>
+            <tr data-mat="mantequilla"><td class="cantidades-td">Mantequilla</td><td class="cantidades-td">8</td><td class="cantidades-td">kg</td></tr>
+            <tr data-mat="aceite"><td class="cantidades-td">Aceite</td><td class="cantidades-td">15</td><td class="cantidades-td">litros</td></tr>
+            <tr data-mat="polvo_hornear"><td class="cantidades-td">Polvo de hornear</td><td class="cantidades-td">2</td><td class="cantidades-td">kg</td></tr>
+            <tr data-mat="chocolate"><td class="cantidades-td">Chocolate</td><td class="cantidades-td">6</td><td class="cantidades-td">kg</td></tr>
+            <tr data-mat="queso"><td class="cantidades-td">Queso</td><td class="cantidades-td">12</td><td class="cantidades-td">kg</td></tr>
+            <tr data-mat="jamon"><td class="cantidades-td">Jamón</td><td class="cantidades-td">10</td><td class="cantidades-td">kg</td></tr>
+            <tr data-mat="pollo"><td class="cantidades-td">Pollo</td><td class="cantidades-td">20</td><td class="cantidades-td">kg</td></tr>
+            <tr data-mat="carne"><td class="cantidades-td">Carne</td><td class="cantidades-td">18</td><td class="cantidades-td">kg</td></tr>
+            <tr data-mat="verduras"><td class="cantidades-td">Verduras</td><td class="cantidades-td">40</td><td class="cantidades-td">kg</td></tr>
+            <tr data-mat="frutas"><td class="cantidades-td">Frutas</td><td class="cantidades-td">35</td><td class="cantidades-td">kg</td></tr>
+            <tr data-mat="salsas"><td class="cantidades-td">Salsas</td><td class="cantidades-td">10</td><td class="cantidades-td">litros</td></tr>
+            <tr data-mat="servilletas"><td class="cantidades-td">Servilletas</td><td class="cantidades-td">500</td><td class="cantidades-td">unidades</td></tr>
+            <tr data-mat="vasos"><td class="cantidades-td">Vasos</td><td class="cantidades-td">200</td><td class="cantidades-td">unidades</td></tr>
+            <tr data-mat="platos"><td class="cantidades-td">Platos</td><td class="cantidades-td">180</td><td class="cantidades-td">unidades</td></tr>
+            <tr data-mat="cubiertos"><td class="cantidades-td">Cubiertos</td><td class="cantidades-td">250</td><td class="cantidades-td">unidades</td></tr>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+<script>
+  // Obtiene el parámetro "mat" de la URL
+  const params = new URLSearchParams(window.location.search);
+  const mat = params.get('mat');
+  if(mat) {
+    const fila = document.querySelector('tr[data-mat="' + mat + '"]');
+    if(fila) {
+      fila.classList.add('resaltado-mat');
+    }
+  }
+</script>
+</html>

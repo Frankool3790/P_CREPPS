@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CreppeFlow</title>
+  <link rel="stylesheet" href="../css/styleadmin.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="../Img/logo-remove.png" alt="Logo CreppeFlow">
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="../Usuario_Admin/1_Administrador.html">Inicio</a></li>
+          <li><a href="4_reservas.html">Reservaciones</a></li>
+          <li><a href="9_cronograma.html">Cronograma</a></li>
+          <li><a href="10_materiales.html">Inventario</a></li>
+          <li><a href="3_reportes.html">Reportes</a></li>
+          <li><a href="../html/1_index.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <!-- Encabezado con imagen -->
+      <section class="header-img">
+        <img src="../Img/logo-remove.png" alt="Waffles">
+      </section>
+<section class="reservas-section">
+        <button class="admin-btn" onclick="mostrarFormularioReserva()">+ Nueva Reporte</button>
+        <div id="form-reserva" class="reserva-form" style="display:none; margin-top:20px;">
+          <h2>Agregar Reporte</h2>
+          <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora" required>
+            <label for="personas">Persona Que realiza el Reporte:</label>
+            <input type="text" id="personas" name="personas"  required>
+            <label for="comentario">Descripcion:</label>
+            <input type="text" id="comentario" name="comentario">
+            <div style="margin-top:10px;">
+              <button type="submit" class="admin-btn">Guardar</button>
+              <button type="button" class="admin-btn" onclick="ocultarFormularioReserva()">Cancelar</button>
+            </div>
+          </form>
+        </div>
+        <div id="reservas-listado">
+          <h2 style="margin-top:30px;">Listado de Reportes</h2>
+          <div class="reservas-table-wrapper">
+            <table class="reservas-table">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>ID del asignado</th>
+                  <th>Comentario</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Juan Pérez</td>
+                  <td>2025-07-12</td>
+                  <td>19:00</td>
+                  <td>4123</td>
+                  <td>Accidente Laborar</td>
+                  <td>
+                    <button class="admin-btn">Editar</button>
+                    <button class="admin-btn">Eliminar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>María López</td>
+                  <td>2025-07-13</td>
+                  <td>20:30</td>
+                  <td>2930</td>
+                  <td>Licencia de luto</td>
+                  <td>
+                    <button class="admin-btn">Editar</button>
+                    <button class="admin-btn">Eliminar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+   <script>
+    function mostrarFormularioReserva() {
+      document.getElementById('form-reserva').style.display = 'block';
+      document.getElementById('reservas-listado').style.display = 'none';
+      document.getElementById('calendario').style.display = 'none';
+      const cronograma = document.getElementById('cronograma-detallado');
+      if (cronograma) cronograma.style.display = 'none';
+    }
+
+    function ocultarFormularioReserva() {
+      document.getElementById('form-reserva').style.display = 'none';
+      document.getElementById('reservas-listado').style.display = 'block';
+      document.getElementById('calendario').style.display = 'block';
+      const cronograma = document.getElementById('cronograma-detallado');
+      if (cronograma) cronograma.style.display = 'none';
+    }
+
+    function mostrarReservas() {
+      document.getElementById('form-reserva').style.display = 'none';
+      document.getElementById('reservas-listado').style.display = 'block';
+      document.getElementById('calendario').style.display = 'none';
+      const cronograma = document.getElementById('cronograma-detallado');
+      if (cronograma) cronograma.style.display = 'none';
+    }
+
+    function mostrarCronograma() {
+      document.getElementById('form-reserva').style.display = 'none';
+      document.getElementById('reservas-listado').style.display = 'none';
+      document.getElementById('calendario').style.display = 'block';
+      const cronograma = document.getElementById('cronograma-detallado');
+      if (cronograma) cronograma.style.display = 'block';
+    }
+
+    function guardarReserva() {
+      const nombre = document.getElementById('nombre').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+      const personas = document.getElementById('personas').value;
+      const comentario = document.getElementById('comentario').value;
+
+      const fila = document.createElement('tr');
+      fila.innerHTML = `
+        <td>${nombre}</td>
+        <td>${fecha}</td>
+        <td>${hora}</td>
+        <td>${personas}</td>
+        <td>${comentario}</td>
+        <td>
+          <button class="admin-btn">Editar</button>
+          <button class="admin-btn">Eliminar</button>
+        </td>
+      `;
+      document.querySelector('.reservas-table tbody').appendChild(fila);
+      document.getElementById('formulario-reserva').reset();
+      ocultarFormularioReserva();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.reservas-table tbody')?.addEventListener('click', function(event) {
+        const boton = event.target;
+        const fila = boton.closest('tr');
+
+        if (boton.textContent === 'Eliminar') {
+  const confirmar = confirm('¿Confirmas la eliminación de esta reserva?');
+  if (confirmar) {
+    fila.remove();
+  }
+}
+        if (boton.textContent === 'Editar') {
+          const celdas = fila.querySelectorAll('td');
+          document.getElementById('nombre').value = celdas[0].textContent;
+          document.getElementById('fecha').value = celdas[1].textContent;
+          document.getElementById('hora').value = celdas[2].textContent;
+          document.getElementById('personas').value = celdas[3].textContent;
+          document.getElementById('comentario').value = celdas[4].textContent;
+          fila.remove();
+          mostrarFormularioReserva();
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>
