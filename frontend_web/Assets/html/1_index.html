@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crepes & Waffles Estilo</title>
+  <link rel="stylesheet" href="../css/estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <main>
+  <header class="navbar">
+    <div class="logo">
+      <img src="../img/logo-remove.png" height="50"/>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../html/1_index.html">Inicio</a></li>
+        <li><a href="../html/2_menu.html">Menú</a></li>
+        <li><a href="../html/3_nosotros.html">Nosotros</a></li>
+        <li><a href="../html/4_login.html">Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+
+  <section class="hero">
+    <section class="carousel-container">
+      <div class="carousel" id="carousel">
+        <img src="../img/plato1.jfif">
+        <img src="../img/plato2.jfif">
+        <img src="../img/plato3.jfif">
+        <img src="../img/plato4.jpg">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="prevSlide()">‹</button>
+        <button onclick="nextSlide()">›</button>
+      </div>
+    </section>
+    <h1>Bienvenido a un lugar especial</h1>
+    <p>Donde los sabores cuentan historias.</p>
+    <a href="2_menu.html" class="btn">Ver menú</a>
+  </section>
+
+ 
+ </main>
+<!-- footer -->
+ 
+<footer class="footer">
+  <div class="footer-container">
+    <div class="logo">
+      <img src="../img/logo-remove.png" height="50"/>
+    </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CreppeFlow. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</div>
+
+  <script>
+  const carousel = document.getElementById('carousel');
+  let index = 0;
+
+  function showSlide(i) {
+    const totalSlides = carousel.children.length;
+    index = (i + totalSlides) % totalSlides;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(index + 1);
+  }
+
+  function prevSlide() {
+    showSlide(index - 1);
+  }
+
+  // Auto avance cada 5 segundos
+  setInterval(() => {
+    nextSlide();
+  }, 8000);
+</script>
+
+</body>
+</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -7,17 +8,51 @@ body {
 
 .navbar {
   background-color: #fdf5e6;
+=======
+/* Reset y base */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Wrapper general para mantener el footer abajo */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper main {
+  flex: 1;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ddca4f;
+>>>>>>> 24093ad (10/jul/25)
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
   border-bottom: 2px solid #e1cda8;
+=======
+  border-bottom: 5px solid #cf9b22;
+>>>>>>> 24093ad (10/jul/25)
 }
 
 .logo {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
+<<<<<<< HEAD
   color: #8b6e4f;
+=======
+  color: #cd970f;
+>>>>>>> 24093ad (10/jul/25)
 }
 
 .nav-links {
@@ -28,6 +63,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
+<<<<<<< HEAD
   color: #4b3f32;
   font-weight: bold;
 }
@@ -36,16 +72,37 @@ body {
   text-align: center;
   padding: 80px 20px;
   background-color: #fcefdc;
+=======
+  color: #c67927;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* Hero section (inicio) */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #c59421de;
+  border-bottom: 5px solid #cf9b22;
+>>>>>>> 24093ad (10/jul/25)
 }
 
 .hero h1 {
   font-size: 2.5rem;
+<<<<<<< HEAD
   color: #5c422a;
+=======
+  color: #ffffff;
+>>>>>>> 24093ad (10/jul/25)
 }
 
 .hero p {
   font-size: 1.2rem;
   margin: 10px 0 30px;
+<<<<<<< HEAD
 }
 
 .btn {
@@ -66,12 +123,101 @@ body {
 }
 
 .about h2, .admin h2 {
+=======
+  color: #ffffff;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #c9a86b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #b38e5a;
+}
+
+/* Menu section */
+.menu-section {
+  background-color: #2473b9;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.menu-section h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #ffffff;
+}
+
+.menu-subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.categoria {
+  margin-bottom: 40px;
+}
+
+.categoria h2 {
+  font-size: 1.8em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.platos {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.plato {
+  background-color: #fdf1dd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.plato h3 {
+  margin: 0 0 8px;
+  color: #4b3f32;
+}
+
+.plato p {
+  margin: 0 0 10px;
+  color: #6b5e53;
+}
+
+.precio {
+  font-weight: bold;
+  color: #a67c52;
+}
+
+/* Nosotros section (about) */
+.about {
+  background-color: #fdf1dd;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about h2 {
+>>>>>>> 24093ad (10/jul/25)
   font-family: 'Playfair Display', serif;
   color: #8b6e4f;
   font-size: 2rem;
   margin-bottom: 15px;
 }
 
+<<<<<<< HEAD
 .admin p {
   margin-bottom: 25px;
   line-height: 1.6;
@@ -220,3 +366,147 @@ body {
   }
   
   
+=======
+/* Login section */
+.login-section {
+  background-color: #2473b9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.login-container {
+  background-color: #fdf1dd;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #8b6e4f;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.login-container label {
+  display: block;
+  margin-top: 15px;
+  color: #4b3f32;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.login-container input[type="submit"] {
+  width: 100%;
+  background-color: #c9a86b;
+  color: white;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.login-container input[type="submit"]:hover {
+  background-color: #b38e5a;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
+/* Carousel */
+/* Contenedor del carrusel */
+.carousel-container {
+  position: relative;
+  max-width: 400px;
+  max-height: 400px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 40px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Carrusel en sí */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Imágenes dentro del carrusel */
+.carousel img {
+  width: 100%;
+  height: 500px;
+  flex-shrink: 0;
+}
+
+/* Botones de navegación */
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.carousel-buttons button {
+  background-color: rgba(47, 38, 38, 0.7);
+  border: none;
+  font-size: 2em;
+  padding: 0 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #4b3f32;
+  transition: background-color 0.2s ease;
+}
+
+.carousel-buttons button:hover {
+  background-color: #f3e2c7;
+}
+
+
+/* Footer */
+.footer {
+  background-color:#1e1d1a; /* Color de fondo del footer */
+  color: #c67927; /* Color del texto del footer */
+  padding: 20px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  border-bottom: 5px solid #cf9b22;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.footer-bottom {
+  width: 100%;
+  text-align: right;
+}
+
+.footer-bottom p {
+  margin: 1px 0 0;
+}
+>>>>>>> 24093ad (10/jul/25)
